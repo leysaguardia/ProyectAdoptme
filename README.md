@@ -8,7 +8,9 @@ Incluye Swagger para documentación, tests funcionales, y Docker.
 
 ### Imagen en Docker Hub
 Repositorio: [leysaguardia/proyectadoptme](https://hub.docker.com/r/leysaguardia/proyectadoptme)  
-Tags disponibles: 1.0.0, latest
+Tags disponibles: 1.0.3, latest
+...
+leysaguardia/proyectadoptme:1.0.3
 
 ---
 
@@ -52,6 +54,12 @@ Ejecutar:
 npm test
 
 
+---
+### Notas
+- Healthcheck: `GET /__ping`
+- Raíz del servidor (`/`) redirige o muestra mensaje "API funcionando".
+- Para detener el contenedor: `docker stop <nombre>`
+- Para ver logs: `docker logs -f <nombre>`
 
 
 
