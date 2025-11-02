@@ -36,6 +36,27 @@ app.get('/__ping', (req, res) => res.json({ ok: true, port: PORT }));
 
 mountSwagger(app);
 
+app.get('/', (req, res) => {
+  res.json({
+    ok: true,
+    message: 'API funcionando ',
+    docs: '/docs',
+    ping: '/__ping',
+    ejemplos: ['/api/mocks', '/api/users', '/api/pets']
+  });
+});
+
+
+app.use((req, res) => {
+  res.status(404).json({
+    error: 'Ruta no encontrada',
+    method: req.method,
+    path: req.originalUrl
+  });
+});
+
+
+
 
 export default app;
 
