@@ -12,22 +12,22 @@ Tags disponibles: 1.0.0, latest
 
 ---
 
-### Para ejecutar el proyecto con Docker:
+### Para ejecutar el proyecto con Docker
 
-####  1.Usando archivo `.env`
-Colocar un archivo `.env` en la raíz del proyecto con las siguientes variables:
-
+#### 1. Usando archivo `.env`
+Colocar un archivo `.env` en la raíz del proyecto:
 ```env
 PORT=8080
 MONGO_URL=mongodb+srv://<usuario>:<contraseña>@<cluster>.mongodb.net/adoptme
-```
+
 
 ####  2.Definiendo variables 
 
 docker run -d -p 8080:8080 \
   -e PORT=8080 \
-  -e MONGO_URL=mongodb+srv://<usuario>:<contraseña>@<cluster>.mongodb.net/adoptme \ 
+  -e MONGO_URL="mongodb+srv://<usuario>:<contraseña>@<cluster>.mongodb.net/adoptme" \
   leysaguardia/proyectadoptme:1.0.0
+
 
 #### Endpoints principales
 
