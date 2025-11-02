@@ -20,6 +20,7 @@ Colocar un archivo `.env` en la raíz del proyecto:
 PORT=8080
 MONGO_URL=mongodb+srv://<usuario>:<contraseña>@<cluster>.mongodb.net/adoptme
 
+```
 
 ####  2.Definiendo variables 
 
