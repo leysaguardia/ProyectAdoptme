@@ -11,7 +11,7 @@ import petsRouter from './routes/pets.router.js';
 import adoptionsRouter from './routes/adoption.router.js';
 import sessionsRouter from './routes/sessions.router.js';
 import mocksRouter from './routes/mocks.router.js';
-
+import { mountSwagger } from './docs/swagger.js';
 
 const app = express();
 const PORT = process.env.PORT||8080;
@@ -34,6 +34,18 @@ console.log('→ mocks montado en /api/mocks');
 
 app.get('/__ping', (req, res) => res.json({ ok: true, port: PORT }));
 
+mountSwagger(app);
+
+//app.listen(PORT,()=>console.log(`Listening on ${PORT}`))
 
 
-app.listen(PORT,()=>console.log(`Listening on ${PORT}`))
+
+export default app;
+
+
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(PORT, () => console.log(`🚀 Servidor escuchando en puerto ${PORT}`));
+}
+
+
+
